@@ -996,8 +996,8 @@ class Req:
         self.kv_committed_freed = False
         self.kv_overallocated_freed = False
 
-        # When using input_embeds, we cannot easily mix the original input embeddings 
-        # with the newly generated output token IDs during re-prefill of retracted request. 
+        # When using input_embeds, we cannot easily mix the original input embeddings
+        # with the newly generated output token IDs during re-prefill of retracted request.
         # output_ids will have no use, but will lead to wrong size cache indexes.
         # Therefore, we discard the generated output_ids and restart prefill and generation
         # to ensure shape consistency in KV cache.
